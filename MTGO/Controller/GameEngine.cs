@@ -15,6 +15,12 @@ namespace MTGO.Controller
         Player nonActivePlayer;
         List<Permanent> permanents;
         ArrayList stack;
+
+        public GameEngine()
+        {
+            turnNumber = 0;
+
+        }
         public void beginNewTurn(Player activePlayer)
         {
             this.activePlayer = activePlayer;
@@ -28,17 +34,22 @@ namespace MTGO.Controller
             player.hasPriority = false;
             if (player.Equals(activePlayer))
                 givePriority(nonActivePlayer);
-            else
+            else if (stack.Count == 0)
                 resolveNextStackItem();
+            else 
         }
         public void resolveNextStackItem()
         {
-            if (stack[stack.Count] is Permanent)
+            if (stack[stack.Count] is Card)
             {
-                Permanent permanent = stack[stack.Count] as Permanent;
+                Card card = stack[stack.Count] as Card;
+                card.resolve();
                 stack.RemoveAt(stack.Count);
-                permanents.Add(permanent);
             }
+        }
+        public void addPermanent(Permanent permanent)
+        {
+            permanents.Add(permanent);
         }
         public void untapStep()
         {

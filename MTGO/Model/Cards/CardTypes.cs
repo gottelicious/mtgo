@@ -8,8 +8,11 @@ namespace MTGO.Model
 {
     abstract class Card
     {
-        Mana[] cost;
-        int convertedManaCost { public get; set; }
+        List<Mana> internalCost;
+        public List<Mana> cost { get { return internalCost; } set { internalCost = value; } }
+        int internalConvertedManaCost;
+        public int convertedManaCost { get { return internalConvertedManaCost; } set { internalConvertedManaCost = value; } }
+        abstract public void resolve();
     }
 
     abstract class Permanent : Card
@@ -28,15 +31,19 @@ namespace MTGO.Model
         {
             isTapped = true;
         }
+        public void resolve()
+        {
+            controller.
+        }
     }
     interface Artifact
     {
     }
     interface Creature
     {
-        int power { get; set; }
+        public int power { get; set; }
         int currentPower { get; set; }
-        int toughness { get; set; }
+        public int toughness { get; set; }
         int currentToughness { get; set; }
     }
     interface Enchantment

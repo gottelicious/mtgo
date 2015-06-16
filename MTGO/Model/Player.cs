@@ -8,8 +8,6 @@ namespace MTGO.Model
 {
     class Player
     {
-        Boolean activePlayer { public get; set; }
-        public Boolean publicActivePlayer { get { return activePlayer; } set { activePlayer = value; } }
         int lifeTotal;
         int poisonCounters;
         int damageTaken;
@@ -17,6 +15,16 @@ namespace MTGO.Model
         public List<Card> hand;
         public List<Card> library;
         public Boolean hasPriority;
+
+        public Player()
+        {
+            lifeTotal = 20;
+            poisonCounters = 0;
+            damageTaken = 0;
+            lifeGained = 0;
+            hand = new List<Card>();
+            library = 
+        }
 
         public void draw(int cards)
         {

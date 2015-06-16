@@ -70,6 +70,8 @@
   <ItemGroup>
     <Compile Include="Model\Cards\CardTypes.cs" />
     <Compile Include="Model\Cards\Instant.cs" />
+    <Compile Include="Model\Cards\Test\GrizzlyBear.cs" />
+    <Compile Include="Model\GamePhases.cs" />
     <Compile Include="Model\Mana.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

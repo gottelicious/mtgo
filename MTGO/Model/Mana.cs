@@ -9,7 +9,6 @@ namespace MTGO.Model
     enum Colors { Colorless, White, Blue, Black, Red, Green }
     class Mana
     {
-
     }
 
     class White : Mana
