@@ -44,6 +44,7 @@ namespace MTGO.Controller
             {
                 Card card = stack[stack.Count] as Card;
                 card.resolve();
+                addPermanent(card as Permanent);
                 stack.RemoveAt(stack.Count);
             }
         }

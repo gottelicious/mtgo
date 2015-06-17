@@ -21,7 +21,8 @@ namespace MTGO.Model.Cards.Test
 
         public override void resolve()
         {
-            return;
+            isTapped = false;
+            isSummoningSick = true;
         }
     }
 }

@@ -31,10 +31,6 @@ namespace MTGO.Model
         {
             isTapped = true;
         }
-        public void resolve()
-        {
-            controller.
-        }
     }
     interface Artifact
     {
